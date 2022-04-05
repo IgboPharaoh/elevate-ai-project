@@ -1,0 +1,55 @@
+/* ljk */
+/* Input Field */
+.inputField__form {
+  display: flex;
+  align-items: center;
+  border-radius: 4rem;
+  position: relative;
+}
+.inputField__input {
+  height: 4.2rem;
+  width: 50vw;
+  font-size: 2rem;
+  border-radius: 4rem;
+  border: 1.5px solid #0099ff;
+  padding: 2.4rem;
+}
+::placeholder {
+  opacity: 0.5;
+}
+.inputField__button {
+  height: 100%;
+  border-radius: 4rem;
+  padding: 0 2.4rem;
+  outline: none;
+  position: absolute;
+  right: 0rem;
+  background-image: linear-gradient(90deg, #00e4ea 0%, #6666ff 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: 0.2s all;
+}
+.inputField__button:active,
+.inputField__button:focus {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+
+/* Results */
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .inputField__input {
+    width: 80vw;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .inputField__input {
+    width: 90vw;
+    font-size: 2rem;
+  }
+}
