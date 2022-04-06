@@ -5,20 +5,27 @@ interface Props {
 }
 
 const Requests = ({ input }: Props) => {
-  const [data, setData] = useState<{}>({});
+  const [dataObj, setDataOdataObj] = useState<{
+    data: {
+      images: { original: { url: string } };
+      title: string;
+      id: string | number;
+    }[];
+  }>();
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataOdataObj = async () => {
       fetch(
         `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${input}&limit=25&offset=0&rating=g&lang=en`
       )
         .then((response) => response.json())
         .then((result) => {
-          setData(result);
+          setDataOdataObj(result);
         });
     };
-    fetchData();
+    fetchDataOdataObj();
   }, [input]);
-  return { data };
+  return { dataObj };
 };
 
 export default Requests;
