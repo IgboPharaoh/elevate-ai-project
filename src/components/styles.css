@@ -32,13 +32,16 @@
   font-size: 1.6rem;
   transition: 0.2s all;
 }
-.inputField__button:active,
-.inputField__button:focus {
+.inputField__button:active {
   transform: scale(0.8);
   box-shadow: 0 0 5px black;
 }
 
 /* Results */
+.resultList{
+    display: grid;
+    grid-template-rows: ;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
