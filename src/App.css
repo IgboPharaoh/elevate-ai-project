@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   gap: 3.6rem;
-  padding: 4rem 0;
+  padding: 4rem 0rem 2rem;
 }
 .app__logo {
   object-fit: contain;
@@ -27,6 +27,11 @@
   gap: 2.4rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 0 12rem;
+}
+.giphy__logo {
+  object-fit: contain;
+  width: 16rem;
+  height: 2.8rem;
 }
 /* Media Queries */
 @media (max-width: 906px) {
@@ -41,3 +46,32 @@
     margin: 0 2rem;
   }
 }
+
+/* Pagination */
+/* .pagination {
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+.pagination a {
+  border: 1px solid white;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+}
+.pagination a,
+.pagination span {
+  color: white;
+  background-color: #324960;
+}
+.pagination a:hover {
+  background-color: #4fc3a1;
+  color: white;
+  transition-duration: 0.1s;
+}
+.pagination a:active {
+  background-color: #324960;
+} */

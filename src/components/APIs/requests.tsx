@@ -1,31 +1,30 @@
 import { useEffect, useState } from "react";
+import { dataI } from "../../model";
 
 interface Props {
-  input: string;
+  input?: string;
 }
 
 const Requests = ({ input }: Props) => {
-  const [dataObj, setDataOdataObj] = useState<{
-    data: {
-      images: { original: { url: string } };
-      title: string;
-      id: string | number;
-    }[];
-  }>();
+  const [dataObj, setDataOdataObj] = useState<dataI[]>([]);
+  const fetchDataOdataObj = async (
+    input: string | undefined,
+    pageSize: number = 0
+  ) => {
+    fetch(
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${input}&limit=10&offset=${pageSize}&rating=g&lang=en`
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setDataOdataObj([...dataObj, ...result.data]);
+      });
+  };
 
   useEffect(() => {
-    const fetchDataOdataObj = async () => {
-      fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${input}&limit=25&offset=0&rating=g&lang=en`
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          setDataOdataObj(result);
-        });
-    };
-    fetchDataOdataObj();
+    fetchDataOdataObj(input);
   }, [input]);
-  return { dataObj };
+
+  return { dataObj, fetchDataOdataObj };
 };
 
 export default Requests;
