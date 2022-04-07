@@ -43,7 +43,7 @@ const App: React.FC = () => {
         dataLength={dataObj?.length || 0}
         next={fetchMoreData}
         hasMore={true}
-        loader={<h5>Loading...</h5>}
+        loader={<h3>Loading...</h3>}
       >
         <div className="app__results">
           {dataObj?.map((data, index) => (
